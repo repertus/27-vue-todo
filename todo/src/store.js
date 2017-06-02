@@ -19,9 +19,14 @@ export default {
      setType (state, value) {
        state.newTodo.type = value
      },
-     addTask(state, newTodo) {
-       state.todos.push(newTodo)
-       console.log(newTodo)
+     addTask(state) {
+       state.todos.push(state.newTodo)
+	   state.newTodo = {
+         task: '',
+         priority: '',
+         type: '',
+         complete: 'false'
+       }
      }
   },
   getters: {
@@ -35,12 +40,4 @@ export default {
             return state.newTodo.type
        }
   }
-  // ,
-  // actions: {
-  //   submitTask(state) {
-  //     debugger
-  //     console.log('yes')
-  //     state.dispatch('addTask')
-  //   }
-  // }
 }

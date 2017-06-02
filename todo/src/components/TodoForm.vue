@@ -2,7 +2,6 @@
 	<div class="row" id="todo-form">
 		<div class="col-lg-6 col-lg-offset-1">
 			<form class="form-horizontal" role="form" v-on:submit.prevent="addTask">
-			<!-- <form class="form-horizontal" role="form"> -->
 				<div>
 				  <legend>Add Todo Item</legend>
 				</div>
@@ -42,33 +41,9 @@ export default {
 	},
 	methods: {
 		addTask($event) {
-			console.log($event);
 			this.$store.commit('addTask', $event.target.value)
 		}
 	}
-	// computed: {
-	// 	task() {
-	// 		return this.$store.getters['task']
-	// 	},
-	// 	priority() {
-	// 		return this.$store.getters['priority']
-	// 	},
-	// 	type() {
-	// 		return this.$store.getters['type']
-	// 	}
-	// },
-	// methods: {
-	// 	setTask($event) {
-	// 		this.$store.commit('setTask', $event.target.value)
-	// 	},
-	// 	setPriority($event) {
-	// 		this.$store.commit('setPriority', $event.target.value)
-	// 	},
-	// 	setType($event) {
-	// 		this.$store.commit('setType', $event.target.value)
-	// 	},
-	// 	...mapActions(['submitTask'])
-	// }
 }
 </script>
 
